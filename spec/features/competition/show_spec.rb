@@ -7,7 +7,6 @@ describe 'competition show page' do
   end
 
   it 'shows all info for competition' do
-    save_and_open_page
     expect(page).to have_content(@competition3.name)
     expect(page).to have_content(@competition3.sport)
     expect(page).to have_content("location: #{@competition3.location}")

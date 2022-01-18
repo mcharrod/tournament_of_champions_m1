@@ -10,4 +10,9 @@ describe 'create competition_team page' do
     click_link "Register a new team"
     expect(current_path).to eq("/competitions/#{@competition2.id}/competition_teams/new")
   end
+
+  it 'has a form to register a team' do
+    expect(page).to have_field("Nickname:")
+    expect(page).to have_field("Hometown:")
+  end
 end

@@ -6,3 +6,12 @@
 <p>location: <%= @competition.location %></p>
 
 <%= link_to "Register a new team", "/competitions/#{@competition.id}/competition_teams/new" %>
+
+<p>Teams participating: </p>
+  <% @competition.teams.each do |team| %>
+    <section id= "team-<%= team.id %>">
+      <h3>Team nickname: <%= team.nickname %></h3>
+      <p>Team hometown: <%= team.hometown %></p>
+      <p>Average age: <%= team.average_age %></p>
+    </section>
+<% end  %>

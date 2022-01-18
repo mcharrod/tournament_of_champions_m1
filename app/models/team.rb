@@ -5,4 +5,8 @@ class Team < ApplicationRecord
 
   validates :nickname, presence: true
   validates :hometown, presence: true
+
+  def average_age
+    players.average(:age)
+  end
 end

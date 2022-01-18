@@ -15,4 +15,13 @@ describe 'create competition_team page' do
     expect(page).to have_field("Nickname:")
     expect(page).to have_field("Hometown:")
   end
+
+  it 'registers a team and redirects to competition page' do
+    fill_in("Nickname:", with: "Cats")
+    fill_in("Hometown:", with: "Broadway")
+    click_button("Save")
+    expect(current_path).to eq("/competitions/#{@competition2.id}")
+    expect(page).to have_content("Team nickname: Cats")
+    expect(page).to have_content("Team hometown: Broadway")
+  end
 end

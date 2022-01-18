@@ -11,4 +11,8 @@ describe 'competition show page' do
     expect(page).to have_content(@competition3.sport)
     expect(page).to have_content("location: #{@competition3.location}")
   end
+
+  it 'has a link to register a new team' do
+    expect(page).to have_link("Register a new team")
+  end
 end

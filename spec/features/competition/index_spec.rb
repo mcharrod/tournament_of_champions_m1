@@ -13,4 +13,11 @@ describe 'competition' do
     expect(page).to have_content(@competition2.name)
     expect(page).to have_content(@competition3.name)
   end
+
+  it 'has link to competition show page' do
+    within "#competition-#{@competition2.id}" do
+      click_link "View this competition"
+      expect(current_path).to eq("/competitions/#{@competition2.id}")
+    end
+  end
 end

@@ -1,3 +1,6 @@
 <% @competitions.each do |competition| %>
-<%= competition.name %>
+<section id='competition-<%= competition.id %>'>
+  <%= competition.name %>
+  <%= link_to "View this competition", "/competitions/#{competition.id}" %>
+</section>
 <% end  %>

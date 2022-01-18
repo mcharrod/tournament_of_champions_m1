@@ -4,3 +4,5 @@
   <%= @competition.sport %></p>
 
 <p>location: <%= @competition.location %></p>
+
+<%= link_to "Register a new team", "/competitions/#{@competition.id}/competition_teams/new" %>

@@ -34,10 +34,12 @@ describe 'competition show page' do
 
   it 'displays average age of players on each team' do
     within "#team-#{@team1.id}" do
+      expect(@team1.average_age).to eq(50)
       expect(page).to have_content("Average age: 50")
     end
     within "#team-#{@team2.id}" do
+      expect(@team2.average_age).to eq(25)
       expect(page).to have_content("Average age: 25")
-    end 
+    end
   end
 end
